@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API</title>
+  <style>
+    /* Embedded CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .widget-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .controls {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .chatbot-container {
+      margin-top: 30px;
+    }
+
+    #chatbot {
+      height: 400px;
+      background-color: #e9ecef;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="widget-container">
+    <h1>OpenWidget Controller</h1>
+    
+    <div class="controls">
+      <button id="hideBtn">Hide Widget</button>
+      <button id="maximizeBtn">Maximize Widget</button>
+      <button id="minimizeBtn">Minimize Widget</button>
+    </div>
+
+    <!-- Chatbot integration -->
+    <div class="chatbot-container">
+      <h2>AI ChatBot</h2>
+      <div id="chatbot"></div>
+    </div>
+  </div>
+
+  <!-- OpenWidget JS Integration -->
+  <script>
+    // Simulated widget API functionality
+    const OpenWidget = {
+      call: function(method) {
+        console.log(`Widget ${method}`);
+        alert(`Widget ${method}`);
+      }
+    };
+
+    OpenWidget.on = function(event, callback) {
+      if (event === 'ready') {
+        callback();
+      }
+    }
+
+    OpenWidget.on('ready', onReady);
+
+    function onReady() {
+      console.log('Widget is ready!');
+    }
+
+    // Event Listeners for buttons
+    document.getElementById('hideBtn').addEventListener('click', function() {
+      OpenWidget.call('hide');
+    });
+
+    document.getElementById('maximizeBtn').addEventListener('click', function() {
+      OpenWidget.call('maximize');
+    });
+
+    document.getElementById('minimizeBtn').addEventListener('click', function() {
+      OpenWidget.call('minimize');
+    });
+  </script>
+
+  <!-- Chatbot Integration -->
+  <script>
+    window.__ow = window.__ow || {};
+    window.__ow.organizationId = "<organization_id>";
+    window.__ow.template_id = "<widget_id>";
+    window.__ow.integration_name = "manual_settings";
+    window.__ow.product_name = "chatbot";   
+
+    ;(function(n,t,c){function i(n){return e._h = ... // Rest of the ChatBot code here.
+    </script>
+  <noscript>You need to enable JavaScript in order to use the AI chatbot tool powered by ChatBot</noscript>
+</body>
+</html>
