@@ -97,6 +97,9 @@
 
     function onReady() {
       console.log('Widget is ready!');
+      OpenWidget.call('maximize');  // Always maximize on load
+      // API allows webhook integration, such as Shadow API
+      console.log('The API allows webhook integration.');
     }
 
     // Event Listeners for buttons
